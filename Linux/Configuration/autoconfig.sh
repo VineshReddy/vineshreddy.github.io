@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo pacman -Syu broadcom-wl wpa_supplicant  dialog  netctl wpa_actiond bluez bluez-utils  pulseaudio-bluetooth libinput
+sudo pacman -Syu broadcom-wl wpa_supplicant 
+sudo pacman -S dialog  netctl wpa_actiond bluez bluez-utils  pulseaudio-bluetooth libinput
 sudo pacman -S xorg-server xorg-xinit openbox 
 sudo pacman -S light xterm git gvim tmux ranger dmenu xorg-xkill numlockx redshift xclip 
 sudo pacman -S w3m aria2 youtube-dl mps-youtube 
