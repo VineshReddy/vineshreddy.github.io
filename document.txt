@@ -1,0 +1,8 @@
+
+C Reference : 
+
+The C Programming Language - Brain and Dennis
+GCC - https://gcc.gnu.org/onlinedocs/
+C Standard - http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf
+GDB Manual - https://www.gnu.org/software/gdb/documentation/
+

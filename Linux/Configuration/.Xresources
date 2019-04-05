@@ -1,0 +1,66 @@
+XTerm.termName: screen-256color 
+XTerm.vt100.locale: true
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.saveLines: 15000
+XTerm.vt100.scrollBar: true
+xterm*rightScrollBar: true
+XTerm.vt100.scrollbar.width: 8
+
+! Copy and Paste from clipboard
+xterm*VT100.Translations: #override \
+                 Shift <Key>Insert:    insert-selection(SELECT) \n\
+                 Ctrl Shift <Key>V:    insert-selection(SELECT) \n\
+                 Ctrl Shift <Key>C:    copy-selection(SELECT)
+
+*XTerm*VT100.translations:      #override \n\
+        None<Key>Home: string(0x1b) string("[1~") \n\
+        None<Key>End: string(0x1b) string("[4~") \n
+
+! disable bold font faces, instead make text light blue.
+xTerm.vt100.colorBDMode: true
+XTerm.vt100.colorBD: rgb:82/a4/d3
+! disable underlined text, instead make it white.
+ XTerm.vt100.colorULMode: true
+ XTerm.vt100.colorUL: rgb:e4/e4/e4
+! ! similarly use colorIT for italics
+
+! stop output to terminal from jumping down to bottom of scroll again
+xterm*scrollTtyOutput: false
+
+! Use a nice truetype font and size by default... 
+xterm*faceName: DejaVu Sans Mono Book
+xterm*faceSize: 12
+
+! double-click to select whole URLs :D
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! DOS-box colours...
+xterm*foreground: #f1f1f1
+xterm*background: #212121
+xterm*color0: rgb:00/00/00
+xterm*color1: rgb:a8/00/00
+xterm*color2: rgb:00/a8/00
+xterm*color3: rgb:a8/54/00
+xterm*color4: rgb:00/00/a8
+xterm*color5: rgb:a8/00/a8
+xterm*color6: rgb:00/a8/a8
+xterm*color7: rgb:a8/a8/a8
+xterm*color8: rgb:54/54/54
+xterm*color9: rgb:fc/54/54
+xterm*color10: rgb:54/fc/54
+xterm*color11: rgb:fc/fc/54
+xterm*color12: rgb:54/54/fc
+xterm*color13: rgb:fc/54/fc
+xterm*color14: rgb:54/fc/fc
+xterm*color15: rgb:fc/fc/fc
+
+
+
+! Fix Backspace key
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+
+
+
+xterm*modifyOtherKeys: 1
+
