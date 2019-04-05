@@ -3,14 +3,19 @@
 sudo pacman -Syu broadcom-wl wpa_supplicant  dialog  netctl wpa_actiond bluez bluez-utils  pulseaudio-bluetooth libinput
 sudo pacman -S xorg-server xorg-xinit openbox 
 sudo pacman -S light xterm git gvim tmux ranger dmenu xorg-xkill numlockx redshift xclip 
-sudo pacman -S chromium w3m aria2 youtube-dl mps-youtube gpicview weechat
+sudo pacman -S w3m aria2 youtube-dl mps-youtube 
 sudo pacman -S atool bzip2 cpio gzip lha xz lzop p7zip tar unace unrar zip unzip
-sudo pacman -S ttf-opensans ttf-dejavu ttf-liberation noto-fonts
+sudo pacman -S ttf-dejavu
+#sudo pacman -S ttf-opensans ttf-dejavu ttf-liberation noto-fonts
 #sudo pacman -S ntfs-3g mtpfs android-tools
 sudo pacman -S jre-openjdk apache lua npm nodejs
-#sudo pacman -S pavucontrol lxrandr fuse ffmpeg ffmpegthumbnailer
+sudo pacman -S lxrandr fuse ffmpeg ffmpegthumbnailer
 #lxrandr for hdmi , fuse for appimage
 #sudo pacman -S kdenlive, blender, gimp, krita, inkscape, audacity, virtualbox, okular
+
+sudo pacman -S weechat python2 ruby guile aspell
+#sudo pacman -S chromium pavucontrol 
+
 
 sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
 sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
@@ -43,8 +48,8 @@ mkdir ~/.vim/{swap,backup,undo}
 
 
 
-sudo mv /lib/firmware/brcm/BCM.hcd ~/Backup/
-sudo cp BCM43142A0-0a5c-21d7.hcd /lib/firmware/brcm/
+#sudo mv /lib/firmware/brcm/BCM.hcd ~/Backup/
+#sudo cp BCM43142A0-0a5c-21d7.hcd /lib/firmware/brcm/
 
 sudo cp touchpad.conf  /etc/X11/xorg.conf.d/
 
