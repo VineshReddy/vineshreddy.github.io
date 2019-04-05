@@ -29,6 +29,7 @@ sudo cp local.conf /etc/fonts/
 
 mkdir ~/{.config,.vim}/
 
+ln -sf ~/vineshreddy.github.io/Linux/Configuration/.gitconfig ~/.gitconfig
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.Xmodmap ~/.Xmodmap
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/autoconf.sh ~/autoconf.sh
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.bashrc ~/.bashrc
