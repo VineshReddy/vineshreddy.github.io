@@ -9,7 +9,7 @@ sudo pacman -S atool bzip2 cpio gzip lha xz lzop p7zip tar unace unrar zip unzip
 sudo pacman -S ttf-dejavu
 #sudo pacman -S ttf-opensans ttf-dejavu ttf-liberation noto-fonts
 #sudo pacman -S ntfs-3g mtpfs android-tools
-sudo pacman -S jre-openjdk apache lua npm nodejs
+sudo pacman -S jre-openjdk apache lua npm nodejs go
 sudo pacman -S lxrandr fuse ffmpeg ffmpegthumbnailer
 #lxrandr for hdmi , fuse for appimage
 #sudo pacman -S kdenlive, blender, gimp, krita, inkscape, audacity, virtualbox, okular
@@ -28,6 +28,8 @@ sudo cp local.conf /etc/fonts/
 #sudo systemctl enable bluetooth.service
 
 mkdir ~/{.config,.vim}/
+mkdir -p ~/Applications/bin ~/Downloads 
+mkdir ~/.vim/{swap,backup,undo}
 
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.gitconfig ~/.gitconfig
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.Xmodmap ~/.Xmodmap
@@ -38,17 +40,11 @@ ln -sf ~/vineshreddy.github.io/Linux/Configuration/.tmux.conf ~/.tmux.conf
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.vimrc ~/.vimrc
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.xinitrc ~/.xinitrc
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.Xresources ~/.Xresources
-ln -sf ~/vineshreddy.github.io/Linux/Configuration/.bind.sh ~/.bind.sh
+ln -sf ~/vineshreddy.github.io/Linux/Configuration/app ~/Applications/bin/app
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.config/openbox ~/.config/openbox
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.config/ranger ~/.config/ranger
 
-
 echo "Symbolics created.";
-
-mkdir ~/Applications ~/Downloads 
-mkdir ~/.vim/{swap,backup,undo}
-
-
 
 #sudo mv /lib/firmware/brcm/BCM.hcd ~/Backup/
 #sudo cp BCM43142A0-0a5c-21d7.hcd /lib/firmware/brcm/
@@ -61,14 +57,9 @@ vim +PluginInstall +qall
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-
-
-#/etc/fstab
-#ln -s /mnt/sda4 /home/vinesh/.drive
-#permissions
-
 #npm global install path
 npm config set prefix '~/Applications/.npm'
 
-
-#git clone https://github.com/ziahamza/webui-aria2 ~/Applications/
+#Download Apps
+git clone https://github.com/ziahamza/webui-aria2 ~/Applications/
+curl -fsSL https://filebrowser.xyz/get.sh | bash

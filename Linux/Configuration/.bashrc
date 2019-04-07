@@ -13,8 +13,6 @@ alias bx='bash ~/.bind.sh bluetooth'
 
 alias fm='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 #alias vim='vim --servername localhost --remote-tab-silent '
-alias pdf='foxitreader'
-alias off='libreoffice'
 alias dl='bash ~/.bind.sh aria'
 #alt key (arg: N) remove nd -r '\e-'
 #for i in "-" {0..9}; do bind -r "\e$i"; done
