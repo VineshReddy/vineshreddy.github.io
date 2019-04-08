@@ -19,8 +19,8 @@ elif [ "$1" == "convertvideos" ]; then
 		rm -rf "${i%.*}.mkv"
 	done
 elif [ "$1" == "init" ]; then
-	sudo mount -o rw /dev/sda5 ~/drive #================> Change manual mount
-	if [ -e "/.swap" ]; then
+	sudo mount -o rw /dev/sda5 home/vinesh/drive #================> Change manual mount
+	if [ ! -e "/.swap" ]; then
 		dd if=/dev/zero of=/.swap bs=2048 count=1M
 		fi
 		mkswap /.swap
@@ -34,17 +34,21 @@ elif [ "$1" == "init" ]; then
 		fi
 
 	else
-		ext_ip=$(ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | tail -n1)
+		ext_ip=$(ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3' | tail -n1)
 		fbport=8000
+	
+	if [ "$1" == "gotty" ]; then
+		gotty -w tmux
 
-		if [ "$1" == "aria" ]; then
-			echo "http://$ext_ip/Applications/webui-aria2-master/docs/index.html"
-			aria2c --enable-rpc --rpc-listen-all &
-			if [ "$2" == "y" ]; then
-				chromium ~/Applications/webui-aria2-master/docs/index.html
-			fi
-
-			echo "http://$ext_ip:$fbport/"
-			(cd ~/Applications && exec filebrowser -r ~/  -a 0.0.0.0 -p $fbport ) &
+	elif [ "$1" == "aria" ]; then
+		echo "http://$ext_ip/Applications/webui-aria2-master/docs/index.html"
+		(cd ~/Downloads && exec aria2c --enable-rpc --rpc-listen-all )
+		if [ "$2" == "y" ]; then
+			chromium ~/Applications/webui-aria2-master/docs/index.html
 		fi
+
+	elif [ "$1" == "filebrowser" ]; then
+		echo "http://$ext_ip:$fbport/"
+		(cd ~/Applications && exec filebrowser -r ~/  -a 0.0.0.0 -p $fbport )
 	fi
+fi
