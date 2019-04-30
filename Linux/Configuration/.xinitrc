@@ -49,8 +49,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
-
+xmodmap ~/.Xmodmap &
+/usr/bin/setxkbmap -option "caps:swapescape" &
 
 #numlock always on startup
 numlockx &

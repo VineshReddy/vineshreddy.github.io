@@ -19,8 +19,11 @@ sudo bash -c 'echo "export FREETYPE_PROPERTIES="truetype:interpreter-version=40"
 sudo cp local.conf /etc/fonts/
 
 if [ "$1" == "x64" ]; then
-	sudo pacman -S broadcom-wl wpa_supplicant  dialog  netctl wpa_actiond bluez bluez-utils  pulseaudio-bluetooth libinput
+	
 	sudo pacman -S ntfs-3g mtpfs android-tools
+	sudo pacman -S broadcom-wl-dkms wpa_supplicant  dialog  netctl bluez bluez-utils  pulseaudio-bluetooth libinput #wpa_actiond
+	sudo rmmod b43 b43legacy bcm43xx bcma brcm80211 brcmfmac brcmsmac ssb wl
+	sudo modprobe wl
 	sudo pacman -S chromium pavucontrol gpicview 
 	#sudo systemctl enable netctl-auto@wlp6s0.service bluetooth.service
 	sudo mv /lib/firmware/brcm/BCM.hcd ~/.Trash/
@@ -43,7 +46,7 @@ mkdir -p ~/Applications/bin ~/Downloads ~/{.config,.vim}/ ~/.vim/{swap,backup,un
 
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.gitconfig ~/.gitconfig
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.Xmodmap ~/.Xmodmap
-ln -sf ~/vineshreddy.github.io/Linux/Configuration/autoconf.sh ~/autoconf.sh
+ln -sf ~/vineshreddy.github.io/Linux/Configuration/autoconfig.sh ~/autoconfig.sh
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.bashrc ~/.bashrc
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.inputrc ~/.inputrc
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.tmux.conf ~/.tmux.conf 
@@ -51,8 +54,9 @@ ln -sf ~/vineshreddy.github.io/Linux/Configuration/.vimrc ~/.vimrc
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.xinitrc ~/.xinitrc
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/.Xresources ~/.Xresources
 ln -sf ~/vineshreddy.github.io/Linux/Configuration/app ~/app
-ln -sf ~/vineshreddy.github.io/Linux/Configuration/.config/openbox ~/.config/openbox
-ln -sf ~/vineshreddy.github.io/Linux/Configuration/.config/ranger ~/.config/ranger
+ln -s ~/vineshreddy.github.io/Linux/Configuration/.config/openbox ~/.config/
+ln -s ~/vineshreddy.github.io/Linux/Configuration/.config/ranger ~/.config/
+
 
 echo "Symbolics created.";
 
